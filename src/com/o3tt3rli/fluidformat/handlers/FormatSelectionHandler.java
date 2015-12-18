@@ -45,8 +45,8 @@ public class FormatSelectionHandler extends AbstractHandler {
 			int lineOffset = document.getLineOffset(document.getLineOfOffset(offset));
 
 			String spaces = leadingWhitespaces(document.get(lineOffset, offset - lineOffset));
-
-			document.replace(offset, length, FluidFormat.format(document.get(offset, length), spaces + spaces));
+			String approxSpaces = spaces + spaces;
+			document.replace(offset, length, FluidFormat.format(document.get(offset, length), approxSpaces));
 		} catch (Exception e) {
 			// ignore
 		}
