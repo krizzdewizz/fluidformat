@@ -38,6 +38,10 @@ public class FormatSelectionHandler extends AbstractHandler {
 				length = expanded[1];
 			}
 
+			if (length == 0) {
+				return;
+			}
+
 			int lineOffset = document.getLineOffset(document.getLineOfOffset(offset));
 
 			String spaces = leadingWhitespaces(document.get(lineOffset, offset - lineOffset));
