@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="fluidformat"
+            id="com.o3tt3rli.fluidformat.commands.category">
+      </category>
+      <command
+            name="Fluid Format Selection"
+            categoryId="com.o3tt3rli.fluidformat.commands.category"
+            id="com.o3tt3rli.fluidformat.commands.formatSelection">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="com.o3tt3rli.fluidformat.commands.formatSelection"
+            class="com.o3tt3rli.fluidformat.handlers.FormatSelectionHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.o3tt3rli.fluidformat.commands.formatSelection"
+            contextId="org.eclipse.ui.textEditorScope"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+  
+</plugin>
